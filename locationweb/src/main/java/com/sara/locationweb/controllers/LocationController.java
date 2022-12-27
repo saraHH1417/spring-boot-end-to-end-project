@@ -1,8 +1,11 @@
 package com.sara.locationweb.controllers;
 
 import com.sara.locationweb.entities.Location;
+import com.sara.locationweb.repositories.LocationRepository;
 import com.sara.locationweb.service.LocationService;
 import com.sara.locationweb.utilities.EmailUtil;
+import com.sara.locationweb.utilities.ReportUtil;
+import jakarta.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/location")
@@ -21,6 +26,12 @@ public class LocationController {
     LocationService locationService;
     @Autowired
     EmailUtil emailUtility;
+    @Autowired
+    LocationRepository locationRepository;
+    @Autowired
+    ReportUtil reportUtil;
+    @Autowired
+    ServletContext servletContext;
 
     @RequestMapping("/create")
     public String showCreate() {
@@ -73,5 +84,17 @@ public class LocationController {
     public String editLocation(@ModelAttribute("location") Location location, ModelMap modelMap) {
         locationService.updateLocation(location);
         return this.displayLocations(modelMap);
+    }
+
+    @RequestMapping("/generateReport")
+    public String generateReport() {
+        String path = servletContext.getRealPath("/");
+
+        List<Object[]>  data = locationRepository.findTypeAndTypeCount()
+                                .stream()
+                                .filter(d -> Objects.nonNull(d[0]))
+                                .toList();
+        reportUtil.generatePieChart(path, data);
+        return "report";
     }
 }
