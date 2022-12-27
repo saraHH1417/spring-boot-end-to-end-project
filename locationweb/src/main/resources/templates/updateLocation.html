@@ -1,0 +1,22 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Location</title>
+</head>
+<body>
+<form action="editLocation" method="put">
+        <pre>
+            ID: <input type="text" name="id" th:value="${location.id}" readonly>
+            Code: <input type="text" name="code" th:value="${location.code}">
+            Name: <input type="text" name="name" th:value="${location.name}">
+            Type: Urban: <input  type="radio" name="type" value="URBAN" th:field="*{location.type}">
+                Rural: <input type="radio" name="type" value="RURAL" th:field="*{location.type}">
+            <input type="submit" value="save">
+        </pre>
+</form>
+</body>
+</html>

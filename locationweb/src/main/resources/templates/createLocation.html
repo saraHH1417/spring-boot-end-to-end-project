@@ -1,6 +1,3 @@
-<%@ page language="java"
-         contentType="text/html; ISO-8859-1"
-         pageEncoding="utf-8" %>
 <!Doctype html>
 <html lang="en">
 <head>
@@ -11,7 +8,7 @@
     <title>Create Location</title>
 </head>
 <body>
-    ${msg}
+    <b th:text="${msg}"></b>
     <form action="saveLocation" method="post">
         <pre>
             Code: <input type="text" name="code">
