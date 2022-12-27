@@ -19,6 +19,10 @@ public class Location {
     @Column(name = "type")
     private String type;
 
+    public Location() {
+
+    }
+
     public int getId() {
         return id;
     }
