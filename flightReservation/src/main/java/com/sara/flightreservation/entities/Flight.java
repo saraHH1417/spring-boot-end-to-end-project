@@ -2,25 +2,31 @@ package com.sara.flightreservation.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
 @Table(name = "FLIGHT")
+
 public class Flight extends AbstractEntity{
 
-    private String operationAirline;
+    private String operatingAirlines;
     private String departureCity;
     private String arrivalCity;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
     private Date dateOfDeparture;
-    private Timestamp estimatedDepartureime;
+    private Timestamp estimatedDepartureTime;
 
 
 
-    public String getOperationAirline() {
-        return operationAirline;
+    public String getOperatingAirlines() {
+        return operatingAirlines;
     }
 
     public String getDepartureCity() {
@@ -35,13 +41,13 @@ public class Flight extends AbstractEntity{
         return dateOfDeparture;
     }
 
-    public Timestamp getEstimatedDepartureime() {
-        return estimatedDepartureime;
+    public Timestamp getEstimatedDepartureTime() {
+        return estimatedDepartureTime;
     }
 
 
-    public void setOperationAirline(String operationAirline) {
-        this.operationAirline = operationAirline;
+    public void setOperatingAirlines(String operationAirlines) {
+        this.operatingAirlines = operationAirlines;
     }
 
     public void setDepartureCity(String departureCity) {
@@ -56,7 +62,7 @@ public class Flight extends AbstractEntity{
         this.dateOfDeparture = dateOfDeparture;
     }
 
-    public void setEstimatedDepartureime(Timestamp estimatedDepartureime) {
-        this.estimatedDepartureime = estimatedDepartureime;
+    public void setEstimatedDepartureTime(Timestamp estimatedDepartureime) {
+        this.estimatedDepartureTime = estimatedDepartureime;
     }
 }

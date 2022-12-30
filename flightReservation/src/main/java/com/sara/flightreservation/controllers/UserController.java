@@ -18,7 +18,6 @@ public class UserController {
 
     @RequestMapping("/showReg")
     public String showRegisterationPage() {
-        System.out.println("jkj");
         return "/login/registerUser";
     }
 
