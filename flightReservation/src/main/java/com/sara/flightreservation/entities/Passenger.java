@@ -7,18 +7,18 @@ import jakarta.persistence.Table;
 @Table(name = "PASSENGER")
 public class Passenger extends AbstractEntity{
 
-
-    private String passenger;
+    private String firstName;
     private String lastName;
     private String email;
     private String phone;
 
-    public void setPassenger(String passenger) {
-        this.passenger = passenger;
-    }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public void setEmail(String email) {
@@ -29,12 +29,13 @@ public class Passenger extends AbstractEntity{
         this.phone = phone;
     }
 
-    public String getPassenger() {
-        return passenger;
-    }
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getFirstName(String firstName) {
+        return firstName;
     }
 
     public String getEmail() {
