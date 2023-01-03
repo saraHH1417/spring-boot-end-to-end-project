@@ -5,6 +5,6 @@ import com.sara.flightcheckin.entities.Reservation;
 
 public interface ReservationRestClient {
 
-    public Reservation findReservation(Long id);
-    public Reservation updateReservation(ReservationUpdateRequest request);
+    Reservation findReservation(Long id);
+    Reservation updateReservation(ReservationUpdateRequest request);
 }

@@ -28,9 +28,6 @@ public class FlightController {
                               @RequestParam("to") String to,
                               @RequestParam("departureDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date departureDate,
                               ModelMap modelMap) {
-        System.out.println(from);
-        System.out.println(to);
-        System.out.println(departureDate);
         List<Flight> flights = flightRepository.findFlights(from, to, departureDate);
         modelMap.addAttribute("flights", flights);
         return "displayFlights";

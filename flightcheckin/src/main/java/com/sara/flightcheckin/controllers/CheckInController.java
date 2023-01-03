@@ -25,7 +25,6 @@ public class CheckInController {
             @RequestParam("reservationId") Long reservationId,
             ModelMap modelMap) {
         Reservation reservation = restClient.findReservation(reservationId);
-        System.out.println(reservation);
         modelMap.addAttribute("reservation", reservation);
         return "displayReservationDetails";
     }

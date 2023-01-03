@@ -31,7 +31,7 @@ public class Passenger extends AbstractEntity{
         return lastName;
     }
 
-    public String getFirstName(String firstName) {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -41,5 +41,15 @@ public class Passenger extends AbstractEntity{
 
     public String getPhone() {
         return phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

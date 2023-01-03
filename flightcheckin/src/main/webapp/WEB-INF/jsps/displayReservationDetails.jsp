@@ -11,7 +11,7 @@
 </head>
 <body>
     <h2>Flight Details:</h2>
-    Airlines: ${reservation.flight.opertaingAirlines}<br>
+    Airlines: ${reservation.flight.operatingAirlines}<br>
     Flight No: ${reservation.flight.flightNumber}<br>
     Departure City: ${reservation.flight.departureCity}<br>
     Arrival City: ${reservation.flight.arrivalCity}<br>

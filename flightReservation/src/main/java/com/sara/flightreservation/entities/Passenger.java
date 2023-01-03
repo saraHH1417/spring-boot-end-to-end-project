@@ -34,7 +34,7 @@ public class Passenger extends AbstractEntity{
         return lastName;
     }
 
-    public String getFirstName(String firstName) {
+    public String getFirstName() {
         return firstName;
     }
 
