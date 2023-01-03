@@ -2,8 +2,10 @@ package com.sara.flightcheckin.dto;
 
 import com.sara.flightcheckin.entities.Reservation;
 import com.sara.flightcheckin.integration.ReservationRestClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+@Component
 public class ReservationRestClientImpl implements ReservationRestClient {
 
     private static final String RESERVATION_REST_URL = "http://localhost:8080/flightreservation/reservations/";
