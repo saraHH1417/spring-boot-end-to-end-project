@@ -1,5 +1,6 @@
 package com.sara.flightcheckin.controllers;
 
+import com.sara.flightcheckin.dto.ReservationUpdateRequest;
 import com.sara.flightcheckin.entities.Reservation;
 import com.sara.flightcheckin.integration.ReservationRestClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,17 @@ public class CheckInController {
         Reservation reservation = restClient.findReservation(reservationId);
         modelMap.addAttribute("reservation", reservation);
         return "displayReservationDetails";
+    }
+
+    @RequestMapping("/completeCheckIn")
+    public String completeCheckIn(
+            @RequestParam("reservationId") Long reservationId,
+            @RequestParam("numberOfBags") int numberOfBags) {
+        ReservationUpdateRequest reservationUpdateRequest = new ReservationUpdateRequest();
+        reservationUpdateRequest.setId(reservationId);
+        reservationUpdateRequest.setNumberOfBags(numberOfBags);
+        reservationUpdateRequest.setCheckedIn(true);
+        restClient.updateReservation(reservationUpdateRequest);
+        return "checkInConfirmation";
     }
 }

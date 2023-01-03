@@ -25,7 +25,7 @@
 
     <form action="completeCheckIn" method="post">
         Enter the number of bags you want to check in: <input type="text" name="numberOfBags">
-        <input type="hidden" value="${reservation.id}">
+        <input type="hidden"  name="reservationId" value="${reservation.id}">
         <input type="submit" value="Check In">
     </form>
 </body>
