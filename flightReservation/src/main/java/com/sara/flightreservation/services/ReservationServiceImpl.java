@@ -7,9 +7,13 @@ import com.sara.flightreservation.entities.Reservation;
 import com.sara.flightreservation.repositories.FlightRepository;
 import com.sara.flightreservation.repositories.PassengerRepository;
 import com.sara.flightreservation.repositories.ReservationRepository;
+import com.sara.flightreservation.util.EmailUtil;
+import com.sara.flightreservation.util.PDFGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 
 @Service
@@ -22,6 +26,11 @@ public class ReservationServiceImpl implements ReservationService{
     @Autowired
     ReservationRepository reservationRepository;
 
+    @Autowired
+    PDFGenerator pdfGenerator;
+
+    @Autowired
+    EmailUtil emailUtil;
 
     @Override
     public Reservation bookFlight(ReservationRequest reservationRequest) {
@@ -43,6 +52,15 @@ public class ReservationServiceImpl implements ReservationService{
             reservation.setPassenger(savedPassenger);
             reservation.setCheckedIn(false);
             Reservation saveedReservation = reservationRepository.save(reservation);
+            String filePath =  Paths.get("./").toAbsolutePath().toString()
+                    + saveedReservation.getId()
+                    + ".pdf";
+            pdfGenerator.generateItinerary(
+                    saveedReservation,
+                    filePath);
+//            emailUtil.sendItinerary(passenger.getEmail(), filePath);
+            // I commented the above line because we haven't set the email settings
+            // The above line sends the flight details  to the email
 
             return saveedReservation;
         }
