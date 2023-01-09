@@ -665,3 +665,9 @@ com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long
 2023-01-09T15:26:14.487+03:30  INFO 23977 --- [http-nio-8080-exec-5] c.s.f.services.ReservationServiceImpl    : Generating the Itinerary
 2023-01-09T15:26:14.487+03:30  INFO 23977 --- [http-nio-8080-exec-5] c.s.flightreservation.util.PDFGenerator  : generateItinerary()
 2023-01-09T15:26:14.495+03:30  INFO 23977 --- [http-nio-8080-exec-5] c.s.f.services.ReservationServiceImpl    : Emailing the Itinerary
+2023-01-09T15:41:02.857+03:30  INFO 23977 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09T15:41:02.859+03:30  INFO 23977 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-09T15:41:02.861+03:30  INFO 23977 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-09T15:41:04.310+03:30  INFO 32503 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09T15:41:04.312+03:30  INFO 32503 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-09T15:41:04.324+03:30  INFO 32503 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

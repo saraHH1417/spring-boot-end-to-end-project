@@ -2,9 +2,11 @@ package com.sara.flightreservation.controllers;
 
 import com.sara.flightreservation.entities.User;
 import com.sara.flightreservation.repositories.UserRepository;
+import com.sara.flightreservation.services.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +19,11 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
+    @Autowired
+    private SecurityService securityService;
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     @RequestMapping("/showReg")
     public String showRegisterationPage() {
@@ -33,6 +39,7 @@ public class UserController {
     @RequestMapping(value = "registerUser", method = RequestMethod.POST)
     public String register(@ModelAttribute("user") User user) {
         LOGGER.info("Inside register() " + user);
+        user.setPassword(encoder.encode(user.getPassword()));
         userRepository.save(user);
         return "login/login";
     }
@@ -45,9 +52,8 @@ public class UserController {
         LOGGER.error("ERROR");
         LOGGER.warn("warn");
         LOGGER.info("info");
-
-        User user = userRepository.findByEmail(email);
-        if (user != null && user.getPassword().equals(password)) {
+        boolean loginResponse = securityService.login(email, password);
+        if (loginResponse) {
             return "findFlights";
         }
         modelMap.addAttribute("msg", "Invalid username or password. Please try again.");
