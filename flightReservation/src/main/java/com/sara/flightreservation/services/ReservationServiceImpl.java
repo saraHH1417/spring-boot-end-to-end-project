@@ -35,6 +35,8 @@ public class ReservationServiceImpl implements ReservationService{
     EmailUtil emailUtil;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ReservationServiceImpl.class);
+
+    private static final String ITINERATY_DIR =  Paths.get("./").toAbsolutePath().toString();
     @Override
     public Reservation bookFlight(ReservationRequest reservationRequest) {
 
@@ -61,9 +63,8 @@ public class ReservationServiceImpl implements ReservationService{
 
             LOGGER.info("Saving the reservation: " + reservation);
             Reservation saveedReservation = reservationRepository.save(reservation);
-            String filePath =  Paths.get("./").toAbsolutePath().toString()
-                    + saveedReservation.getId()
-                    + ".pdf";
+            String filePath = ITINERATY_DIR + saveedReservation.getId() + ".pdf";
+
             LOGGER.info("Generating the Itinerary");
             pdfGenerator.generateItinerary(
                     saveedReservation,
