@@ -1,0 +1,379 @@
+2023-01-09T13:50:34.170+03:30  INFO 18714 --- [main] c.s.f.FlightReservationApplication       : Starting FlightReservationApplication using Java 18.0.2 with PID 18714 (/home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation/target/classes started by sara in /home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation)
+2023-01-09T13:50:34.173+03:30  INFO 18714 --- [main] c.s.f.FlightReservationApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-09T13:50:34.755+03:30  INFO 18714 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09T13:50:34.808+03:30  INFO 18714 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
+2023-01-09T13:50:35.260+03:30  INFO 18714 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-09T13:50:35.268+03:30  INFO 18714 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-09T13:50:35.268+03:30  INFO 18714 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-09T13:50:35.466+03:30  INFO 18714 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-09T13:50:35.471+03:30  INFO 18714 --- [main] o.a.c.c.C.[.[.[/flightreservation]       : Initializing Spring embedded WebApplicationContext
+2023-01-09T13:50:35.472+03:30  INFO 18714 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1234 ms
+2023-01-09T13:50:35.591+03:30  INFO 18714 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-09T13:50:36.691+03:30 ERROR 18714 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159) ~[spring-jdbc-6.0.3.jar:6.0.3]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117) ~[spring-jdbc-6.0.3.jar:6.0.3]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) ~[spring-jdbc-6.0.3.jar:6.0.3]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:330) ~[spring-jdbc-6.0.3.jar:6.0.3]
+	at org.springframework.boot.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:166) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateDefaultDdlAutoProvider.getDefaultDdlAuto(HibernateDefaultDdlAutoProvider.java:42) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.lambda$getVendorProperties$1(HibernateJpaConfiguration.java:129) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings.getDdlAuto(HibernateSettings.java:41) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.determineDdlAuto(HibernateProperties.java:118) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.getAdditionalProperties(HibernateProperties.java:87) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.determineHibernateProperties(HibernateProperties.java:80) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.getVendorProperties(HibernateJpaConfiguration.java:131) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.entityManagerFactory(JpaBaseConfiguration.java:131) ~[spring-boot-autoconfigure-3.0.1.jar:3.0.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1324) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1161) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1130) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:905) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.1.jar:3.0.1]
+	at com.sara.flightreservation.FlightReservationApplication.main(FlightReservationApplication.java:13) ~[classes/:na]
+
+2023-01-09T13:50:36.730+03:30  INFO 18714 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09T13:50:36.772+03:30  INFO 18714 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-09T13:50:36.888+03:30  WARN 18714 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-09T13:50:37.020+03:30  INFO 18714 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-09T13:50:38.023+03:30 ERROR 18714 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:284) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:177) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:36) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:255) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:230) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:218) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:138) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1350) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1421) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1797) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1747) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1130) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:905) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.1.jar:3.0.1]
+	at com.sara.flightreservation.FlightReservationApplication.main(FlightReservationApplication.java:13) ~[classes/:na]
+
+2023-01-09T13:50:38.026+03:30  WARN 18714 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+java.sql.SQLException: Access denied for user 'root'@'localhost'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:284) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:177) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:36) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:255) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:230) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:218) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:138) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1350) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1421) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1797) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1747) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1130) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:905) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.3.jar:6.0.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.1.jar:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.1.jar:3.0.1]
+	at com.sara.flightreservation.FlightReservationApplication.main(FlightReservationApplication.java:13) ~[classes/:na]
+
+2023-01-09T13:50:38.051+03:30  INFO 18714 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-09T13:50:38.052+03:30  WARN 18714 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-01-09T13:50:39.025+03:30  INFO 18714 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09T13:50:39.031+03:30  INFO 18714 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09T13:50:39.641+03:30  WARN 18714 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09T13:50:39.753+03:30  INFO 18714 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-01-09T13:50:39.935+03:30  INFO 18714 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/flightreservation'
+2023-01-09T13:50:39.943+03:30  INFO 18714 --- [main] c.s.f.FlightReservationApplication       : Started FlightReservationApplication in 6.317 seconds (process running for 7.307)
+2023-01-09T13:50:41.765+03:30  INFO 18714 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/flightreservation]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-09T13:50:41.765+03:30  INFO 18714 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-09T13:50:41.766+03:30  INFO 18714 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-09T13:50:44.487+03:30  INFO 18714 --- [http-nio-8080-exec-3] c.s.f.controllers.UserController         : inside showRegisterationPage() method
+2023-01-09T14:19:22.494+03:30  INFO 18714 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09T14:19:24.952+03:30  INFO 23977 --- [main] c.s.f.FlightReservationApplication       : Starting FlightReservationApplication using Java 18.0.2 with PID 23977 (/home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation/target/classes started by sara in /home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation)
+2023-01-09T14:19:24.955+03:30  INFO 23977 --- [main] c.s.f.FlightReservationApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-09T14:19:25.530+03:30  INFO 23977 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09T14:19:25.584+03:30  INFO 23977 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 4 JPA repository interfaces.
+2023-01-09T14:19:25.936+03:30  INFO 23977 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-09T14:19:25.942+03:30  INFO 23977 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-09T14:19:25.942+03:30  INFO 23977 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-09T14:19:26.126+03:30  INFO 23977 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-09T14:19:26.131+03:30  INFO 23977 --- [main] o.a.c.c.C.[.[.[/flightreservation]       : Initializing Spring embedded WebApplicationContext
+2023-01-09T14:19:26.132+03:30  INFO 23977 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1112 ms
+2023-01-09T14:19:26.234+03:30  INFO 23977 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-09T14:19:26.331+03:30  INFO 23977 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ad9b8d3
+2023-01-09T14:19:26.332+03:30  INFO 23977 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-09T14:19:26.361+03:30  INFO 23977 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09T14:19:26.384+03:30  INFO 23977 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-09T14:19:26.498+03:30  WARN 23977 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-09T14:19:26.575+03:30  INFO 23977 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-09T14:19:26.576+03:30  WARN 23977 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-01-09T14:19:27.048+03:30  INFO 23977 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09T14:19:27.058+03:30  INFO 23977 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09T14:19:27.462+03:30  WARN 23977 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09T14:19:27.577+03:30  INFO 23977 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-01-09T14:19:27.745+03:30  INFO 23977 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/flightreservation'
+2023-01-09T14:19:27.752+03:30  INFO 23977 --- [main] c.s.f.FlightReservationApplication       : Started FlightReservationApplication in 3.187 seconds (process running for 3.775)
+2023-01-09T14:19:45.198+03:30  INFO 23977 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/flightreservation]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-09T14:19:45.200+03:30  INFO 23977 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-09T14:19:45.203+03:30  INFO 23977 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-09T14:19:46.678+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : inside showRegisterationPage() method
+2023-01-09T14:21:42.537+03:30  INFO 23977 --- [http-nio-8080-exec-6] c.s.f.controllers.UserController         : inside Login ad the email is saraa
+2023-01-09T14:21:42.538+03:30 ERROR 23977 --- [http-nio-8080-exec-6] c.s.f.controllers.UserController         : ERROR
+2023-01-09T14:21:42.538+03:30  WARN 23977 --- [http-nio-8080-exec-6] c.s.f.controllers.UserController         : warn
+2023-01-09T14:21:42.538+03:30  INFO 23977 --- [http-nio-8080-exec-6] c.s.f.controllers.UserController         : info
+2023-01-09T14:21:42.625+03:30  WARN 23977 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2023-01-09T14:21:42.625+03:30 ERROR 23977 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'reservation.user' doesn't exist
+2023-01-09T14:21:42.632+03:30 ERROR 23977 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/flightreservation] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password from user u1_0 where u1_0.email=?]; SQL [n/a]] with root cause
+
+java.sql.SQLSyntaxErrorException: Table 'reservation.user' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972) ~[mysql-connector-j-8.0.31.jar:8.0.31]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:217) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:146) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:205) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:85) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:29) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:88) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:197) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:443) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:166) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:91) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$0(ConcreteSqmSelectQueryPlan.java:113) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:335) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:276) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:571) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:363) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.list(QuerySqmImpl.java:1073) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:457) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.getSingleResult(QuerySqmImpl.java:1103) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:193) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:148) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:136) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77) ~[spring-data-commons-3.0.0.jar:3.0.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.0.3.jar:6.0.3]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-6.0.3.jar:6.0.3]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.0.3.jar:6.0.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.0.3.jar:6.0.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:134) ~[spring-data-jpa-3.0.0.jar:3.0.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.3.jar:6.0.3]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218) ~[spring-aop-6.0.3.jar:6.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.findByEmail(Unknown Source) ~[na:na]
+	at com.sara.flightreservation.controllers.UserController.login(UserController.java:49) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:913) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731) ~[tomcat-embed-core-10.1.4.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.4.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-01-09T14:25:33.339+03:30  WARN 23977 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'email' for method parameter type String is not present]
+2023-01-09T14:25:36.618+03:30  INFO 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : inside Login ad the email is saraa
+2023-01-09T14:25:36.619+03:30 ERROR 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : ERROR
+2023-01-09T14:25:36.619+03:30  WARN 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : warn
+2023-01-09T14:25:36.619+03:30  INFO 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : info
+2023-01-09T14:25:42.228+03:30  INFO 23977 --- [http-nio-8080-exec-10] c.s.f.controllers.UserController         : inside showRegisterationPage() method
+2023-01-09T14:26:02.533+03:30  INFO 23977 --- [http-nio-8080-exec-1] c.s.f.controllers.UserController         : Inside register() User{firstName='zahra', lastName='Haghighi', email='sara.afzar@Gmail.com', password='1234'}
+2023-01-09T14:26:05.937+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : inside Login ad the email is sara.afzar@Gmail.com
+2023-01-09T14:26:05.937+03:30 ERROR 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : ERROR
+2023-01-09T14:26:05.938+03:30  WARN 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : warn
+2023-01-09T14:26:05.938+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : info
+2023-01-09T14:26:11.327+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T14:26:11.343+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.FlightController       : Flights found are []
+2023-01-09T14:26:17.616+03:30  WARN 23977 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.util.Date] for value '2018-02-05']
+2023-01-09T14:26:24.352+03:30  INFO 23977 --- [http-nio-8080-exec-5] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T14:26:24.355+03:30  INFO 23977 --- [http-nio-8080-exec-5] c.s.f.controllers.FlightController       : Flights found are []
+2023-01-09T14:26:29.828+03:30  INFO 23977 --- [http-nio-8080-exec-6] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Wed May 02 00:00:00 UTC 2018
+2023-01-09T14:26:29.832+03:30  INFO 23977 --- [http-nio-8080-exec-6] c.s.f.controllers.FlightController       : Flights found are []
+2023-01-09T14:26:35.680+03:30  WARN 23977 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.util.Date] for value '2018-02-05']
+2023-01-09T14:29:44.008+03:30  WARN 23977 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.util.Date] for value '2018-02-05']
+2023-01-09T14:29:50.552+03:30  INFO 23977 --- [http-nio-8080-exec-1] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T14:29:50.560+03:30  INFO 23977 --- [http-nio-8080-exec-1] c.s.f.controllers.FlightController       : Flights found are [Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA1', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 03:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA2', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 05:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA3', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 06:14:07.0}, Flight{operatingAirlines='South West', departureCity='AUS', arrivalCity='NYC', flightNumber='SW1', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 07:14:07.0}]
+2023-01-09T14:29:57.866+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Wed May 02 00:00:00 UTC 2018
+2023-01-09T14:29:57.869+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.FlightController       : Flights found are []
+2023-01-09T14:30:07.663+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T14:30:07.668+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.FlightController       : Flights found are [Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA1', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 03:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA2', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 05:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA3', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 06:14:07.0}, Flight{operatingAirlines='South West', departureCity='AUS', arrivalCity='NYC', flightNumber='SW1', dateOfDeparture=2018-02-04, estimatedDepartureTime=2018-02-05 07:14:07.0}]
+2023-01-09T15:01:33.034+03:30  WARN 23977 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'from' for method parameter type String is not present]
+2023-01-09T15:01:39.701+03:30  INFO 23977 --- [http-nio-8080-exec-7] c.s.f.controllers.UserController         : inside Login ad the email is sara.afzar@Gmail.com
+2023-01-09T15:01:39.702+03:30 ERROR 23977 --- [http-nio-8080-exec-7] c.s.f.controllers.UserController         : ERROR
+2023-01-09T15:01:39.703+03:30  WARN 23977 --- [http-nio-8080-exec-7] c.s.f.controllers.UserController         : warn
+2023-01-09T15:01:39.703+03:30  INFO 23977 --- [http-nio-8080-exec-7] c.s.f.controllers.UserController         : info
+2023-01-09T15:01:41.088+03:30  WARN 23977 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'departureDate' for method parameter type Date is present but converted to null]
+2023-01-09T15:01:48.276+03:30  INFO 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T15:01:48.281+03:30  INFO 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.FlightController       : Flights found are [Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 03:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA2', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 05:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA3', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 06:14:07.0}, Flight{operatingAirlines='South West', departureCity='AUS', arrivalCity='NYC', flightNumber='SW1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 07:14:07.0}]
+2023-01-09T15:02:39.627+03:30  WARN 23977 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'from' for method parameter type String is not present]
+2023-01-09T15:03:18.985+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : inside Login ad the email is sara.afzar@Gmail.com
+2023-01-09T15:03:18.986+03:30 ERROR 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : ERROR
+2023-01-09T15:03:18.987+03:30  WARN 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : warn
+2023-01-09T15:03:18.987+03:30  INFO 23977 --- [http-nio-8080-exec-2] c.s.f.controllers.UserController         : info
+2023-01-09T15:03:32.257+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T15:03:32.263+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.FlightController       : Flights found are [Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 03:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA2', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 05:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA3', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 06:14:07.0}, Flight{operatingAirlines='South West', departureCity='AUS', arrivalCity='NYC', flightNumber='SW1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 07:14:07.0}]
+2023-01-09T15:03:38.815+03:30  INFO 23977 --- [http-nio-8080-exec-4] c.s.f.controllers.ReservationController  : ShowCompleteReservation() invoked with flightID1
+2023-01-09T15:03:38.832+03:30  INFO 23977 --- [http-nio-8080-exec-4] c.s.f.controllers.ReservationController  : Flight is Optional[Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 03:14:07.0}]
+2023-01-09T15:05:13.386+03:30  INFO 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : inside Login ad the email is sara.afzar@Gmail.com
+2023-01-09T15:05:13.386+03:30 ERROR 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : ERROR
+2023-01-09T15:05:13.386+03:30  WARN 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : warn
+2023-01-09T15:05:13.386+03:30  INFO 23977 --- [http-nio-8080-exec-9] c.s.f.controllers.UserController         : info
+2023-01-09T15:06:18.178+03:30  WARN 23977 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'email' for method parameter type String is not present]
+2023-01-09T15:06:21.674+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.UserController         : inside Login ad the email is sara.afzar@Gmail.com
+2023-01-09T15:06:21.674+03:30 ERROR 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.UserController         : ERROR
+2023-01-09T15:06:21.674+03:30  WARN 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.UserController         : warn
+2023-01-09T15:06:21.674+03:30  INFO 23977 --- [http-nio-8080-exec-3] c.s.f.controllers.UserController         : info
+2023-01-09T15:06:26.410+03:30  INFO 23977 --- [http-nio-8080-exec-4] c.s.f.controllers.FlightController       : inside findFlights() From AUS toNYC Departure date Mon Feb 05 00:00:00 UTC 2018
+2023-01-09T15:06:26.415+03:30  INFO 23977 --- [http-nio-8080-exec-4] c.s.f.controllers.FlightController       : Flights found are [Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 03:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA2', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 05:14:07.0}, Flight{operatingAirlines='American Airlines', departureCity='AUS', arrivalCity='NYC', flightNumber='AA3', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 06:14:07.0}, Flight{operatingAirlines='South West', departureCity='AUS', arrivalCity='NYC', flightNumber='SW1', dateOfDeparture=2018-02-05, estimatedDepartureTime=2018-02-05 07:14:07.0}]

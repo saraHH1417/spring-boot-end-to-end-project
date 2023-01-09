@@ -1,0 +1,104 @@
+2023-01-09 15:02:26 - Starting FlightReservationApplication using Java 18.0.2 with PID 29112 (/home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation/target/classes started by sara in /home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation)
+2023-01-09 15:02:26 - No active profile set, falling back to 1 default profile: "default"
+2023-01-09 15:02:27 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 15:02:27 - Finished Spring Data repository scanning in 29 ms. Found 4 JPA repository interfaces.
+2023-01-09 15:02:27 - Tomcat initialized with port(s): 8080 (http)
+2023-01-09 15:02:27 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-09 15:02:27 - Starting service [Tomcat]
+2023-01-09 15:02:27 - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-09 15:02:27 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-09 15:02:27 - Initializing Spring embedded WebApplicationContext
+2023-01-09 15:02:27 - Root WebApplicationContext: initialization completed in 805 ms
+2023-01-09 15:02:27 - HikariPool-1 - Starting...
+2023-01-09 15:02:27 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27960b1e
+2023-01-09 15:02:27 - HikariPool-1 - Start completed.
+2023-01-09 15:02:27 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 15:02:27 - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-09 15:02:28 - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-09 15:02:28 - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-09 15:02:28 - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-01-09 15:02:28 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 15:02:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 15:02:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09 15:02:28 - Adding welcome page template: index
+2023-01-09 15:02:29 - Starting ProtocolHandler ["http-nio-8080"]
+2023-01-09 15:02:29 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-01-09 15:02:29 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 15:02:29 - HikariPool-1 - Shutdown initiated...
+2023-01-09 15:02:29 - HikariPool-1 - Shutdown completed.
+2023-01-09 15:02:29 - Pausing ProtocolHandler ["http-nio-8080"]
+2023-01-09 15:02:29 - Stopping service [Tomcat]
+2023-01-09 15:02:29 - Stopping ProtocolHandler ["http-nio-8080"]
+2023-01-09 15:02:29 - Destroying ProtocolHandler ["http-nio-8080"]
+2023-01-09 15:02:29 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-01-09 15:02:29 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-01-09 15:03:14 - Starting FlightReservationApplication using Java 18.0.2 with PID 29298 (/home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation/target/classes started by sara in /home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation)
+2023-01-09 15:03:14 - No active profile set, falling back to 1 default profile: "default"
+2023-01-09 15:03:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 15:03:15 - Finished Spring Data repository scanning in 34 ms. Found 4 JPA repository interfaces.
+2023-01-09 15:03:15 - Tomcat initialized with port(s): 8090 (http)
+2023-01-09 15:03:15 - Initializing ProtocolHandler ["http-nio-8090"]
+2023-01-09 15:03:15 - Starting service [Tomcat]
+2023-01-09 15:03:15 - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-09 15:03:15 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-09 15:03:15 - Initializing Spring embedded WebApplicationContext
+2023-01-09 15:03:15 - Root WebApplicationContext: initialization completed in 951 ms
+2023-01-09 15:03:15 - HikariPool-1 - Starting...
+2023-01-09 15:03:15 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44aa2e13
+2023-01-09 15:03:15 - HikariPool-1 - Start completed.
+2023-01-09 15:03:15 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 15:03:15 - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-09 15:03:15 - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-09 15:03:15 - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-09 15:03:15 - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-01-09 15:03:16 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 15:03:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 15:03:17 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09 15:03:17 - Adding welcome page template: index
+2023-01-09 15:03:17 - Starting ProtocolHandler ["http-nio-8090"]
+2023-01-09 15:03:17 - Tomcat started on port(s): 8090 (http) with context path '/flightreservation'
+2023-01-09 15:03:17 - Started FlightReservationApplication in 3.108 seconds (process running for 3.668)
+2023-01-09 15:06:06 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 15:06:06 - HikariPool-1 - Shutdown initiated...
+2023-01-09 15:06:06 - HikariPool-1 - Shutdown completed.
+2023-01-09 15:06:08 - Starting FlightReservationApplication using Java 18.0.2 with PID 29809 (/home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation/target/classes started by sara in /home/sara/Documents/projects/spring-boot-end-to-end-project/flightReservation)
+2023-01-09 15:06:08 - No active profile set, falling back to 1 default profile: "default"
+2023-01-09 15:06:08 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 15:06:08 - Finished Spring Data repository scanning in 32 ms. Found 4 JPA repository interfaces.
+2023-01-09 15:06:08 - Tomcat initialized with port(s): 8090 (http)
+2023-01-09 15:06:08 - Initializing ProtocolHandler ["http-nio-8090"]
+2023-01-09 15:06:08 - Starting service [Tomcat]
+2023-01-09 15:06:08 - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-09 15:06:09 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-09 15:06:09 - Initializing Spring embedded WebApplicationContext
+2023-01-09 15:06:09 - Root WebApplicationContext: initialization completed in 816 ms
+2023-01-09 15:06:09 - HikariPool-1 - Starting...
+2023-01-09 15:06:09 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46a795de
+2023-01-09 15:06:09 - HikariPool-1 - Start completed.
+2023-01-09 15:06:09 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 15:06:09 - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-09 15:06:09 - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-09 15:06:09 - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-09 15:06:09 - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-01-09 15:06:09 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 15:06:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 15:06:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09 15:06:10 - Adding welcome page template: index
+2023-01-09 15:06:10 - Starting ProtocolHandler ["http-nio-8090"]
+2023-01-09 15:06:10 - Tomcat started on port(s): 8090 (http) with context path '/flightreservation'
+2023-01-09 15:06:10 - Started FlightReservationApplication in 2.729 seconds (process running for 3.277)
