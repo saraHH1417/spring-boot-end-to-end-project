@@ -1,11 +1,14 @@
 package com.sara.clinicalapis.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sara.clinicalapis.model.Patient;
 import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.Timestamp;
 
 @Entity
+@CrossOrigin
 @Table(name = "clinicaldata")
 public class ClinicalData {
     @Id
@@ -18,6 +21,7 @@ public class ClinicalData {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id", nullable = false)
+    @JsonIgnore
     private Patient patient;
     public int getId() {
         return id;
@@ -35,6 +39,10 @@ public class ClinicalData {
         return measuredDateTime;
     }
 
+    public Patient getPatient() {
+        return patient;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -49,5 +57,9 @@ public class ClinicalData {
 
     public void setMeasuredDateTime(Timestamp measuredDateTime) {
         this.measuredDateTime = measuredDateTime;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }

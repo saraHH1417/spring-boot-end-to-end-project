@@ -1,10 +1,12 @@
 package com.sara.clinicalapis.model;
 
 import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
 @Entity
+@CrossOrigin
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +37,10 @@ public class Patient {
         return age;
     }
 
+    public List<ClinicalData> getClinicalDataList() {
+        return clinicalDataList;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -49,5 +55,9 @@ public class Patient {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setClinicalDataList(List<ClinicalData> clinicalDataList) {
+        this.clinicalDataList = clinicalDataList;
     }
 }
