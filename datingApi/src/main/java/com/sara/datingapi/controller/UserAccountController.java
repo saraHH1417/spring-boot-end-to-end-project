@@ -4,9 +4,12 @@ import com.sara.datingapi.entities.Interest;
 import com.sara.datingapi.entities.UserAccount;
 import com.sara.datingapi.repos.InterestRepository;
 import com.sara.datingapi.repos.UserAccountRepository;
+import jakarta.validation.ConstraintViolationException;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +25,15 @@ public class UserAccountController {
     private InterestRepository interestRepository;
     @PostMapping("/users/register-user")
     public UserAccount registerUser(@RequestBody UserAccount userAccount) {
-        return userAccountRepository.save(userAccount);
+        try {
+            return userAccountRepository.save(userAccount);
+        } catch (ConstraintViolationException exception) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    exception.getMessage(),
+                    exception);
+        }
+
     }
 
     @PostMapping("/interests/update")
