@@ -2,6 +2,7 @@ package com.sara.datingapi.controller;
 
 import com.sara.datingapi.entities.Interest;
 import com.sara.datingapi.entities.UserAccount;
+import com.sara.datingapi.exceptions.RecordNotFoundException;
 import com.sara.datingapi.repos.InterestRepository;
 import com.sara.datingapi.repos.UserAccountRepository;
 import jakarta.validation.ConstraintViolationException;
@@ -58,7 +59,7 @@ public class UserAccountController {
     }
 
     @GetMapping("/users/matches/{id}")
-    public List<UserAccount> findMatches(@PathVariable("id") int id) {
+    public List<UserAccount> findMatches(@PathVariable("id") int id) throws RecordNotFoundException {
         Optional<UserAccount> optionaUser = userAccountRepository.findById(id);
         if (optionaUser.isPresent()) {
             UserAccount user = optionaUser.get();
@@ -69,6 +70,6 @@ public class UserAccountController {
                     user.getId()
             );
         }
-        return null;
+        throw new RecordNotFoundException("No matches exist for this user");
     }
 }
